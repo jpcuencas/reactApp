@@ -1,6 +1,10 @@
 import { useState } from 'react';
 
-
+/**
+ * gestionar los cambios del formulario de busqueda
+ * @param {*} initialState 
+ * @returns 
+ */
 export const useForm = ( initialState = {} ) => {
     
     const [values, setValues] = useState(initialState);

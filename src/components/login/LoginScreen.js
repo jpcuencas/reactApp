@@ -13,8 +13,8 @@ export const LoginScreen = ({ history }) => {
         const lastPath = localStorage.getItem('lastPath') || '/';
 
         dispatch({
-            type: types.login,
-            payload: {
+            type: types.login, // accion
+            payload: { // valores de autenticacion
                 name: inputValue
             }
         });
@@ -31,7 +31,7 @@ export const LoginScreen = ({ history }) => {
         <div className="container mt-5">
             <form onSubmit={ handleLogin }>
                 <h1>Login</h1>
-                
+
                 <input type="text"
                     value={ inputValue }
                     onChange={ handleInputChange }

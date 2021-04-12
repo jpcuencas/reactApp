@@ -17,14 +17,12 @@ export const SearchScreen = ({ history }) => {
     });
     const { searchText } = formValues;
     
-    
-    const heroesFiltered = useMemo(() => getHeroesByName( q ), [q])
 
-
+    const heroesFiltered = useMemo(() => getHeroesByName( q ), [q]); // solo busca cuando q cambia
 
     const handleSearch = (e) => {
         e.preventDefault();
-        history.push(`?q=${ searchText }`);
+        history.push(`?q=${ searchText }`); // cambia q
     };
 
     return (
