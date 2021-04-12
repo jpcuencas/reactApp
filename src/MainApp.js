@@ -14,13 +14,12 @@ export const MainApp = () => {
 
     useEffect(() => {
         localStorage.setItem( 'user', JSON.stringify(user) );
-    }, [user])
-
+    }, [user]);
+    
+// <React.StrictMode>
     return (
-
         <AuthContext.Provider value={{ user, dispatch }}>
             <AppRouter />
         </AuthContext.Provider>
-
-    )
+    );
 }

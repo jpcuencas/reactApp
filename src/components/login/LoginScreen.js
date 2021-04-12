@@ -1,4 +1,4 @@
-import React, { useContext } from 'react';
+import React, { useState, useContext } from 'react';
 import { AuthContext } from '../../auth/AuthContext';
 import { types } from '../../types/types';
 
@@ -6,33 +6,43 @@ export const LoginScreen = ({ history }) => {
 
     const { dispatch } = useContext( AuthContext );
 
-    const handleLogin = () => {
-
+    const [inputValue, setInputValue] = useState(''); // ''
+    
+    const handleLogin = (e) => {
+        e.preventDefault();
         const lastPath = localStorage.getItem('lastPath') || '/';
 
         dispatch({
             type: types.login,
             payload: {
-                name: 'Fernando'
+                name: inputValue
             }
         });
-
+        setInputValue('');
         history.replace( lastPath );
         
-    }
+    };
+    
+    const handleInputChange = (e) => {
+        setInputValue( e.target.value );
+    };
 
     return (
         <div className="container mt-5">
-            <h1>Login</h1>
-            <hr />
-
-            <button
-                className="btn btn-primary"
-                onClick={ handleLogin }
-            >
-                Login
-            </button>
-
+            <form onSubmit={ handleLogin }>
+                <h1>Login</h1>
+                
+                <input type="text"
+                    value={ inputValue }
+                    onChange={ handleInputChange }
+                    placeholder="usuario" />
+                <hr />
+                <button
+                    className="btn btn-primary"
+                    onClick={ handleLogin }>
+                    Login
+                </button>
+            </form>
         </div>
     )
 }

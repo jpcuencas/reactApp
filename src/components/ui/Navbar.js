@@ -15,16 +15,14 @@ export const Navbar = () => {
         dispatch({
             type: types.logout
         });
-    }
-
+    };
 
     return (
         <nav className="navbar navbar-expand-sm navbar-dark bg-dark">
             
             <Link 
                 className="navbar-brand" 
-                to="/"
-            >
+                to="/">
                 Asociaciones
             </Link>
 
@@ -35,8 +33,7 @@ export const Navbar = () => {
                         activeClassName="active"
                         className="nav-item nav-link" 
                         exact
-                        to="/marvel"
-                    >
+                        to="/marvel">
                         Marvel
                     </NavLink>
 
@@ -44,8 +41,7 @@ export const Navbar = () => {
                         activeClassName="active"
                         className="nav-item nav-link" 
                         exact
-                        to="/dc"
-                    >
+                        to="/dc">
                         DC
                     </NavLink>
                     
@@ -53,8 +49,7 @@ export const Navbar = () => {
                         activeClassName="active"
                         className="nav-item nav-link" 
                         exact
-                        to="/search"
-                    >
+                        to="/search">
                         Search
                     </NavLink>
                 </div>
@@ -69,8 +64,7 @@ export const Navbar = () => {
 
                     <button 
                         className="nav-item nav-link btn"
-                        onClick={ handleLogout }
-                    > 
+                        onClick={ handleLogout }> 
                         Logout
                     </button>
                 </ul>

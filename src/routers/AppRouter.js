@@ -16,6 +16,7 @@ export const AppRouter = () => {
 
     const { user } = useContext(AuthContext);
 
+    // Main router
     return (
         <Router>
             <div>
@@ -35,5 +36,5 @@ export const AppRouter = () => {
                 </Switch>
             </div>
         </Router>
-    )
+    );
 }
