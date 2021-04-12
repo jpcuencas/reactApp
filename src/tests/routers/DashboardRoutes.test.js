@@ -1,4 +1,5 @@
 import React from 'react';
+import '@testing-library/jest-dom';
 import { mount } from 'enzyme';
 import { AuthContext } from '../../auth/AuthContext';
 import { DashboardRoutes } from '../../routers/DashboardRoutes';

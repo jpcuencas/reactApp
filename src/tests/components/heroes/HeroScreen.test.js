@@ -1,4 +1,5 @@
 import React from 'react';
+import '@testing-library/jest-dom';
 import { mount } from 'enzyme'
 import { HeroScreen } from '../../../components/heroes/HeroScreen';
 import { MemoryRouter, Route } from 'react-router-dom';

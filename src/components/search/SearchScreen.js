@@ -8,20 +8,24 @@ import { getHeroesByName } from '../../selectors/getHeroesByName';
 export const SearchScreen = ({ history }) => {
 
     const location = useLocation();
-    const { q = '' } = queryString.parse( location.search );
+
+    // inicializar la desestructuracion
+    const { q = '' } = queryString.parse( location.search ); // /path   ?q=...
 
     const [ formValues, handleInputChange ] = useForm({
         searchText: q
     });
     const { searchText } = formValues;
     
+    
     const heroesFiltered = useMemo(() => getHeroesByName( q ), [q])
+
 
 
     const handleSearch = (e) => {
         e.preventDefault();
         history.push(`?q=${ searchText }`);
-    }
+    };
 
     return (
         <div>
@@ -47,8 +51,7 @@ export const SearchScreen = ({ history }) => {
 
                         <button
                             type="submit"
-                            className="btn m-1 btn-block btn-outline-primary"
-                        >
+                            className="btn m-1 btn-block btn-outline-primary">
                             Search...
                         </button>
                     </form>
@@ -90,7 +93,6 @@ export const SearchScreen = ({ history }) => {
                 </div>
 
             </div>
-
 
         </div>
     )

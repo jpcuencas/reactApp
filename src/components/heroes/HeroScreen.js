@@ -10,9 +10,9 @@ import { getHeroById } from '../../selectors/getHeroById';
 
 export const HeroScreen = ({ history }) => {
 
-    const { heroeId } = useParams();
+    const { heroeId } = useParams();  // get url params
 
-    const hero = useMemo(() => getHeroById( heroeId ), [ heroeId ]);
+    const hero = useMemo(() => getHeroById( heroeId ), [ heroeId ]); // mayor rapidez
 
 
     if ( !hero ) {
@@ -21,13 +21,12 @@ export const HeroScreen = ({ history }) => {
 
     const handleReturn = () => {
 
-        if( history.length <=2 ) {
+        if( history.length <= 2 ) { //  si el historial esta vacio
             history.push('/');
         } else {
             history.goBack();
         }
-
-    }
+    };
 
     const {
         superhero,

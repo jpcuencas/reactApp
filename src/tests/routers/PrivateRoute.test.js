@@ -1,4 +1,5 @@
 import React from 'react';
+import '@testing-library/jest-dom';
 import { mount } from 'enzyme';
 import { PrivateRoute } from '../../routers/PrivateRoute';
 import { MemoryRouter } from 'react-router-dom';

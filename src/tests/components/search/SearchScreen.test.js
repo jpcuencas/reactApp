@@ -1,4 +1,5 @@
 import React from 'react';
+import '@testing-library/jest-dom';
 import { mount } from 'enzyme';
 import { MemoryRouter, Route } from 'react-router-dom';
 import { SearchScreen } from '../../../components/search/SearchScreen';

@@ -1,4 +1,5 @@
-import { authReducer } from "../../auth/authReducer"
+import '@testing-library/jest-dom';
+import { authReducer } from "../../auth/authReducer";
 import { types } from "../../types/types";
 
 describe('Pruebas en authReducer', () => {
